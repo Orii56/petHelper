@@ -1,0 +1,44 @@
+.container{
+	background: white;
+	height: 150vh;
+	width: 70%;
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	margin-left: 15%;
+	margin-right:15%;
+	border-radius: 25px;
+}
+
+.formBox{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding:5% 10%;
+}
+
+.btn{
+	margin:3% 0%;
+}
+
+
+
+body{
+	background-image: linear-gradient(#6D9624,#B2DB6B);
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	 height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.logo{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	height:20vh;
+	width: 40%;
+	margin-bottom: 2%;
+}
