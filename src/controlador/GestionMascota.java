@@ -51,7 +51,9 @@ public class GestionMascota extends HttpServlet {
 		case "mostrarMascotas":
 
 			List<Mascota> lista = mdao.findByUsuario(1);
+			System.out.println(lista);
 			request.setAttribute("resultado", lista);
+			
 			
 			break;
 		case "detallesMascota":
