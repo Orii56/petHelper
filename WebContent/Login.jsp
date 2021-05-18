@@ -18,20 +18,20 @@
 
 
 			<img class="logo" src="img/PetHelper.png" >
-			<form>
+			<form action="Login?option=logear" method="POST">
 				<div class="form-group">
 					<label for="formEmail">Email</label> <input
-						type="email" class="form-control" id="formEmail"
+						type="email" class="form-control" name="formEmail"
 						placeholder="email@email.com"> <small
 						id="emailHelp" class="form-text text-muted">No te enviaremos correos innecesarios.</small>
 				</div>
 				<div class="form-group">
 					<label for="formPassword">Contraseña</label> <input
-						type="password" class="form-control" id="formPassword"
+						type="password" class="form-control" name="formPassword"
 						placeholder="Contraseña">
 				</div>
 				<a class="btn btn-success btn-block" href="Login?option=logear">Submit</a>
-				<a href="Login?option=registrar" class="alert-link" >Si aún no estas registrado, haz click aquí.</a>
+				<a class="alert-link" >Si aún no estas registrado, haz click aquí.</a>
 			</form>
 		</div>
 	</div>

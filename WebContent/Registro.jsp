@@ -22,37 +22,31 @@
 			
 			<div class="form-group">
 					<label for="formName">Nombre</label> <input
-						type="email" class="form-control" id="formName"
+						type="email" class="form-control" name="formName"
 						placeholder="Nombre">
-				</div>
-				<div class="form-group">
-					<label for="formLastName">Apellidos</label> <input
-						type="email" class="form-control" id="formLastName"
-						placeholder="Apellidos">
-				</div>
-			
+				</div>			
 				<div class="form-group">
 					<label for="formEmail">Email</label> <input
-						type="email" class="form-control" id="formEmail"
+						type="email" class="form-control" name="formEmail"
 						placeholder="email@email.com"> <small
 						id="emailHelp" class="form-text text-muted">No te enviaremos correos innecesarios.</small>
 				</div>
 				
 				<div class="form-group">
 					<label for="formPC">Codigo Postal</label> <input
-						type="email" class="form-control" id="formPC"
+						type="email" class="form-control" name="formPC"
 						placeholder="CP">
 				</div>
 				
 				<div class="form-group">
 					<label for="formPassword">Contraseña</label> <input
-						type="password" class="form-control" id="formPassword"
+						type="password" class="form-control" name="formPassword"
 						placeholder="Contraseña">
 				</div>
 				
 				<div class="form-group">
 					<label for="formPasswordR">Repetir Contraseña</label> <input
-						type="password" class="form-control" id="formPasswordR"
+						type="password" class="form-control" name="formPasswordR"
 						placeholder="Contraseña">
 				</div>
 				

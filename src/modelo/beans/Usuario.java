@@ -154,6 +154,8 @@ public class Usuario implements Serializable {
 		this.tipoUsuario = tipoUsuario;
 	}
 
+	
+	
 	@Override
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", ciudad=" + ciudad + ", contrasena=" + contrasena + ", cp=" + cp

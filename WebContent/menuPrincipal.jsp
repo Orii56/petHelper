@@ -64,9 +64,10 @@
 
 				<!-- Columna derecha -->
 				<div class="col-7" id="rCol">
+					<a href="GestionMascota?=mostrarMascotas">click here</a>
 					<div>
-						<c:forEach items="${requestScope.lista}" var="lista">
-						<p> ${lista.nombre}</p>
+						<c:forEach items="${requestScope.lista}" var="l" begin="0" end="4">
+						<p> ${l.nombre}</p>
 						</c:forEach>	
 					</div>
 

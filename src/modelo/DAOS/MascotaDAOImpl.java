@@ -12,6 +12,7 @@ import modelo.beans.Mascota;
 
 public class MascotaDAOImpl implements MascotaDAO {
 	
+	Mascota m = new Mascota();
 	private EntityManagerFactory emf;
 	private EntityManager em;
 	private EntityTransaction tx;
@@ -45,19 +46,22 @@ public class MascotaDAOImpl implements MascotaDAO {
 
 	@Override
 	public Mascota findById(int id_mascota) {
-		
+		System.out.println("MdaoIMPL: " + id_mascota);
 		return em.find(Mascota.class, id_mascota);
 	
 	}
 
 	@Override
 	public List<Mascota> findByUsuario(int id_usuario) {
+		System.out.println("MdaoIMPL: " + id_usuario);
 		
-		sql = "select m from Mascota where m.id_usuario = :nid";
-		
+		sql = "select m from Mascota m where m.usuario.idUsuario = :nid";
+		System.out.println(sql);
 		try {
+			System.out.println("try");
 			query = em.createQuery(sql);
 			query.setParameter("nid", id_usuario);
+			System.out.println(query.getResultList());
 			return query.getResultList();
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
