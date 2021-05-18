@@ -29,7 +29,7 @@ public class Higiene implements Serializable {
 	//bi-directional many-to-one association to Mascota
 	@ManyToOne
 	@JoinColumn(name="id_mascota")
-	private Mascota mascota;
+	private int id_mascota;
 
 	public Higiene() {
 	}
@@ -66,27 +66,27 @@ public class Higiene implements Serializable {
 		this.validez = validez;
 	}
 
-	public Mascota getMascota() {
-		return this.mascota;
+	public int getMascota() {
+		return this.id_mascota;
 	}
 
-	public void setMascota(Mascota mascota) {
-		this.mascota = mascota;
+	public void setMascota(int id_mascota) {
+		this.id_mascota = id_mascota;
 	}
 
-	public Higiene(int idHigiene, Date fecha, String tipo, String validez, Mascota mascota) {
+	public Higiene(int idHigiene, Date fecha, String tipo, String validez, int id_mascota) {
 		super();
 		this.idHigiene = idHigiene;
 		this.fecha = fecha;
 		this.tipo = tipo;
 		this.validez = validez;
-		this.mascota = mascota;
+		this.id_mascota = id_mascota;
 	}
 
 	@Override
 	public String toString() {
 		return "Higiene [idHigiene=" + idHigiene + ", fecha=" + fecha + ", tipo=" + tipo + ", validez=" + validez
-				+ ", mascota=" + mascota + "]";
+				+ ", mascota=" + id_mascota + "]";
 	}
 	
 	

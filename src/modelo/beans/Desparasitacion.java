@@ -29,7 +29,7 @@ public class Desparasitacion implements Serializable {
 	//bi-directional many-to-one association to Mascota
 	@ManyToOne
 	@JoinColumn(name="id_mascota")
-	private Mascota mascota;
+	private int id_mascota;
 
 	public Desparasitacion() {
 	}
@@ -66,27 +66,27 @@ public class Desparasitacion implements Serializable {
 		this.validez = validez;
 	}
 
-	public Mascota getMascota() {
-		return this.mascota;
+	public int getMascota() {
+		return id_mascota;
 	}
 
-	public void setMascota(Mascota mascota) {
-		this.mascota = mascota;
+	public void setMascota(int id_mascota) {
+		this.id_mascota = id_mascota;
 	}
 
-	public Desparasitacion(int idDesparasitacion, Date fecha, String tipo, String validez, Mascota mascota) {
+	public Desparasitacion(int idDesparasitacion, Date fecha, String tipo, String validez, int id_mascota) {
 		super();
 		this.idDesparasitacion = idDesparasitacion;
 		this.fecha = fecha;
 		this.tipo = tipo;
 		this.validez = validez;
-		this.mascota = mascota;
+		this.id_mascota = id_mascota;
 	}
 
 	@Override
 	public String toString() {
 		return "Desparasitacion [idDesparasitacion=" + idDesparasitacion + ", fecha=" + fecha + ", tipo=" + tipo
-				+ ", validez=" + validez + ", mascota=" + mascota + "]";
+				+ ", validez=" + validez + ", mascota=" + id_mascota + "]";
 	}
 
 	
