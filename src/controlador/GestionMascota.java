@@ -42,11 +42,10 @@ public class GestionMascota extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		String opt = request.getParameter("option");
 		
 		MascotaDAOImpl mdao = new MascotaDAOImpl();
 		
-		switch(opt) {
+		switch(request.getParameter("option")) {
 		
 		case "mostrarMascotas":
 

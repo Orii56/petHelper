@@ -14,8 +14,15 @@
 		<class>modelo.beans.Vacuna</class>
 			<properties>
 			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/petHelper" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
 			<property name="eclipselink.exclude-eclipselink-orm"
 				value="true" />
 		</properties>
-		</persistence-unit>
-	</persistence>
+	</persistence-unit>
+</persistence>
+			
