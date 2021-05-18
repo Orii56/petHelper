@@ -26,7 +26,7 @@ public class Desparasitacion implements Serializable {
 
 	private String validez;
 
-	//bi-directional many-to-one association to Mascota
+	//uni-directional many-to-one association to Mascota
 	@ManyToOne
 	@JoinColumn(name="id_mascota")
 	private Mascota mascota;
@@ -70,6 +70,11 @@ public class Desparasitacion implements Serializable {
 		return this.mascota;
 	}
 
+	public int getIdMascota() {
+		
+		return this.mascota.getIdMascota();		
+	}
+	
 	public void setMascota(Mascota mascota) {
 		this.mascota = mascota;
 	}
@@ -88,7 +93,7 @@ public class Desparasitacion implements Serializable {
 		return "Desparasitacion [idDesparasitacion=" + idDesparasitacion + ", fecha=" + fecha + ", tipo=" + tipo
 				+ ", validez=" + validez + ", mascota=" + mascota + "]";
 	}
+	
+	
 
-	
-	
 }

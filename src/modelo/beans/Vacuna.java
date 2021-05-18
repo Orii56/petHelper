@@ -25,7 +25,7 @@ public class Vacuna implements Serializable {
 
 	private String tipo;
 
-	//bi-directional many-to-one association to Mascota
+	//uni-directional many-to-one association to Mascota
 	@ManyToOne
 	@JoinColumn(name="id_mascota")
 	private Mascota mascota;
@@ -60,6 +60,10 @@ public class Vacuna implements Serializable {
 	public Mascota getMascota() {
 		return this.mascota;
 	}
+	
+	public int getIdMascota() {
+		return this.mascota.getIdMascota();
+	}
 
 	public void setMascota(Mascota mascota) {
 		this.mascota = mascota;
@@ -77,6 +81,7 @@ public class Vacuna implements Serializable {
 	public String toString() {
 		return "Vacuna [idVacuna=" + idVacuna + ", fecha=" + fecha + ", tipo=" + tipo + ", mascota=" + mascota + "]";
 	}
-
 	
+	
+
 }

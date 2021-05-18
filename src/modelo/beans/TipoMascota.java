@@ -2,7 +2,6 @@ package modelo.beans;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -21,10 +20,6 @@ public class TipoMascota implements Serializable {
 	private int idTipo;
 
 	private String tipo;
-
-	//bi-directional many-to-one association to Mascota
-	@OneToMany(mappedBy="tipoMascotaBean")
-	private List<Mascota> mascotas;
 
 	public TipoMascota() {
 	}
@@ -45,40 +40,18 @@ public class TipoMascota implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public List<Mascota> getMascotas() {
-		return this.mascotas;
-	}
-
-	public void setMascotas(List<Mascota> mascotas) {
-		this.mascotas = mascotas;
-	}
-
-	public Mascota addMascota(Mascota mascota) {
-		getMascotas().add(mascota);
-		mascota.setTipoMascotaBean(this);
-
-		return mascota;
-	}
-
-	public Mascota removeMascota(Mascota mascota) {
-		getMascotas().remove(mascota);
-		mascota.setTipoMascotaBean(null);
-
-		return mascota;
-	}
-
-	public TipoMascota(int idTipo, String tipo, List<Mascota> mascotas) {
+	public TipoMascota(int idTipo, String tipo) {
 		super();
 		this.idTipo = idTipo;
 		this.tipo = tipo;
-		this.mascotas = mascotas;
 	}
 
 	@Override
 	public String toString() {
-		return "TipoMascota [idTipo=" + idTipo + ", tipo=" + tipo + ", mascotas=" + mascotas + "]";
+		return "TipoMascota [idTipo=" + idTipo + ", tipo=" + tipo + "]";
 	}
+	
+	
+	
 
-	
-	
 }

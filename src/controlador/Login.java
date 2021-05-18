@@ -70,7 +70,7 @@ public class Login extends HttpServlet {
 				request.setAttribute("estado", "ya estas registrado, haz login!");
 				request.getRequestDispatcher("Login.jsp").forward(request, response);
 			}else {
-				usu = new Usuario(autoIncrement, "", pwd, cp, "",mail, nombre, "", mlist, tipo);
+//				usu = new Usuario(autoIncrement, "", pwd, cp, "",mail, nombre, "", mlist, tipo);
 				udao.insert(usu);
 				
 				Usuario usuPrueba = null;

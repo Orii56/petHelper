@@ -2,7 +2,6 @@ package modelo.beans;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -21,10 +20,6 @@ public class TipoUsuario implements Serializable {
 	private int idTipo;
 
 	private String tipo;
-
-	//bi-directional many-to-one association to Usuario
-	@OneToMany(mappedBy="tipoUsuario")
-	private List<Usuario> usuarios;
 
 	public TipoUsuario() {
 	}
@@ -45,38 +40,16 @@ public class TipoUsuario implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public List<Usuario> getUsuarios() {
-		return this.usuarios;
-	}
-
-	public void setUsuarios(List<Usuario> usuarios) {
-		this.usuarios = usuarios;
-	}
-
-	public Usuario addUsuario(Usuario usuario) {
-		getUsuarios().add(usuario);
-		usuario.setTipoUsuario(this);
-
-		return usuario;
-	}
-
-	public Usuario removeUsuario(Usuario usuario) {
-		getUsuarios().remove(usuario);
-		usuario.setTipoUsuario(null);
-
-		return usuario;
-	}
-
-	public TipoUsuario(int idTipo, String tipo, List<Usuario> usuarios) {
+	
+	public TipoUsuario(int idTipo, String tipo) {
 		super();
 		this.idTipo = idTipo;
 		this.tipo = tipo;
-		this.usuarios = usuarios;
 	}
 
 	@Override
 	public String toString() {
-		return "TipoUsuario [idTipo=" + idTipo + ", tipo=" + tipo + ", usuarios=" + usuarios + "]";
+		return "TipoUsuario [idTipo=" + idTipo + ", tipo=" + tipo + "]";
 	}
 	
 	

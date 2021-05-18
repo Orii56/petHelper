@@ -2,7 +2,6 @@ package modelo.beans;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -33,11 +32,7 @@ public class Usuario implements Serializable {
 
 	private String pais;
 
-	//bi-directional many-to-one association to Mascota
-	@OneToMany(mappedBy="usuario")
-	private List<Mascota> mascotas;
-
-	//bi-directional many-to-one association to TipoUsuario
+	//uni-directional many-to-one association to TipoUsuario
 	@ManyToOne
 	@JoinColumn(name="tipo_user")
 	private TipoUsuario tipoUsuario;
@@ -109,28 +104,6 @@ public class Usuario implements Serializable {
 		this.pais = pais;
 	}
 
-	public List<Mascota> getMascotas() {
-		return this.mascotas;
-	}
-
-	public void setMascotas(List<Mascota> mascotas) {
-		this.mascotas = mascotas;
-	}
-
-	public Mascota addMascota(Mascota mascota) {
-		getMascotas().add(mascota);
-		mascota.setUsuario(this);
-
-		return mascota;
-	}
-
-	public Mascota removeMascota(Mascota mascota) {
-		getMascotas().remove(mascota);
-		mascota.setUsuario(null);
-
-		return mascota;
-	}
-
 	public TipoUsuario getTipoUsuario() {
 		return this.tipoUsuario;
 	}
@@ -140,7 +113,7 @@ public class Usuario implements Serializable {
 	}
 
 	public Usuario(int idUsuario, String ciudad, String contrasena, int cp, String direccion, String mail,
-			String nombre, String pais, List<Mascota> mascotas, TipoUsuario tipoUsuario) {
+			String nombre, String pais, TipoUsuario tipoUsuario) {
 		super();
 		this.idUsuario = idUsuario;
 		this.ciudad = ciudad;
@@ -150,18 +123,16 @@ public class Usuario implements Serializable {
 		this.mail = mail;
 		this.nombre = nombre;
 		this.pais = pais;
-		this.mascotas = mascotas;
 		this.tipoUsuario = tipoUsuario;
 	}
 
-	
-	
 	@Override
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", ciudad=" + ciudad + ", contrasena=" + contrasena + ", cp=" + cp
 				+ ", direccion=" + direccion + ", mail=" + mail + ", nombre=" + nombre + ", pais=" + pais
-				+ ", mascotas=" + mascotas + ", tipoUsuario=" + tipoUsuario + "]";
+				+ ", tipoUsuario=" + tipoUsuario + "]";
 	}
-
 	
+	
+
 }
