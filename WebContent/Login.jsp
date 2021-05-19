@@ -20,18 +20,16 @@
 			<img class="logo" src="img/PetHelper.png" >
 			<form action="Login?option=logear" method="POST">
 				<div class="form-group">
-					<label for="formEmail">Email</label> <input
-						type="email" class="form-control" name="formEmail"
-						placeholder="email@email.com"> <small
-						id="emailHelp" class="form-text text-muted">No te enviaremos correos innecesarios.</small>
+					<label for="email">Email</label>
+					<input type="text" class="form-control" name="email" placeholder="email@email.com" required> <small
+						id="emailText" class="form-text text-muted">No te enviaremos correos innecesarios.</small>
 				</div>
 				<div class="form-group">
-					<label for="formPassword">Contraseña</label> <input
-						type="password" class="form-control" name="formPassword"
-						placeholder="Contraseña">
+					<label for="psw">Contraseña</label> <input
+						type="password" class="form-control" name="password" placeholder="Contraseña" required>
 				</div>
-				<a class="btn btn-success btn-block" href="Login?option=logear">Submit</a>
-				<a class="alert-link" >Si aún no estas registrado, haz click aquí.</a>
+				<button type="submit" class="btn btn-success btn-block">Submit</button>
+				<a href="Registro.jsp" class="alert-link" >Si aún no estas registrado, haz click aquí.</a>
 			</form>
 		</div>
 	</div>

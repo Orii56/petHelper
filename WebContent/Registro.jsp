@@ -18,35 +18,34 @@
 
 
 			<img class="logo" src="img/PetHelper.png" >
-			<form>
+			<form action="Login?option=registrar" method="POST">
 			
 			<div class="form-group">
-					<label for="formName">Nombre</label> <input
-						type="email" class="form-control" name="formName"
+					<label for="text">Nombre</label> <input	type="text" class="form-control" name="name"
 						placeholder="Nombre">
 				</div>			
 				<div class="form-group">
-					<label for="formEmail">Email</label> <input
-						type="email" class="form-control" name="formEmail"
+					<label for="email">Email</label> <input
+						type="email" class="form-control" name="email"
 						placeholder="email@email.com"> <small
 						id="emailHelp" class="form-text text-muted">No te enviaremos correos innecesarios.</small>
 				</div>
 				
 				<div class="form-group">
-					<label for="formPC">Codigo Postal</label> <input
-						type="email" class="form-control" name="formPC"
+					<label for="text">Codigo Postal</label> <input
+						type="text" class="form-control" name="cp"
 						placeholder="CP">
 				</div>
 				
 				<div class="form-group">
-					<label for="formPassword">Contraseña</label> <input
-						type="password" class="form-control" name="formPassword"
+					<label for="password">Contraseña</label> <input
+						type="password" class="form-control" name="password"
 						placeholder="Contraseña">
 				</div>
 				
 				<div class="form-group">
-					<label for="formPasswordR">Repetir Contraseña</label> <input
-						type="password" class="form-control" name="formPasswordR"
+					<label for="passwordR">Repetir Contraseña</label> <input
+						type="password" class="form-control" name="passwordR"
 						placeholder="Contraseña">
 				</div>
 				
@@ -55,7 +54,7 @@
 					<label class="form-check-label" for="exampleCheck1">Acepto los terminos y condiciones</label>
 				</div>
 				<button type="submit" class="btn btn-success btn-block">Submit</button>
-				<a href="#" class="alert-link" >Si ya estas registrado, haz click aquí.</a>
+				<a href="Login.jsp" class="alert-link" >Si ya estas registrado, haz click aquí.</a>
 			</form>
 		</div>
 	</div>
