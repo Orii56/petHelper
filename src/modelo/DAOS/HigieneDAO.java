@@ -6,8 +6,9 @@ import modelo.beans.Higiene;
 
 public interface HigieneDAO {
 	
-	public Higiene findBy(int id);
+	public Higiene findById(int id);
 	
 	public List<Higiene> findByMascota(int id_mascota);
+
 
 }

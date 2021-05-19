@@ -6,9 +6,10 @@ import modelo.beans.Desparasitacion;
 
 public interface DesparasitacionDAO {
 
-	public Desparasitacion findBy(int id);
+	public Desparasitacion findById(int id);
 	
 	public List<Desparasitacion> findByMascota(int id_mascota);
-	
+
+
 	
 }
