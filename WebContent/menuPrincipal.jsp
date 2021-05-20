@@ -29,10 +29,9 @@
 				<!-- Columna izquierda -->
 				<div class="col-5" id="lCol">
 
-
 					<div class="menuButton row align-items-center" id="buttonMascota" onclick="select('mascota')">
 
-						<img class="buttonIcon" src="img/otros.png">
+						<img class="buttonIcon" src="img/Otros.png">
 						<div class="buttonText">
 							<h4>Mascotas</h4>
 						</div>
@@ -64,12 +63,16 @@
 
 				<!-- Columna derecha -->
 				<div class="col-7" id="rCol">
-					<a href="GestionMascota?=mostrarMascotas">click here</a>
+				<nav aria-label='breadcrumb'><ol class='breadcrumb'><li class='breadcrumb-item'>
+<a href='#'>Home</a></li><li class='breadcrumb-item active' aria-current='page'>Mascotas</li></ol></nav>
 					<div>
-						<c:forEach items="${requestScope.lista}" var="l" begin="0" end="4">
-						<p> ${l.nombre}</p>
-						</c:forEach>	
+					<c:forEach items="${requestScope.lista}" var="l" begin="0" end="4">
+					<div class='subMenuButton row align-items-center' onclick="location.href='GestionMascota?option=mostrarMascotas';">
+					<img class='buttonIcon' src='img/${l.tipoMascotaBean.tipo}.png'>
+					<div class='buttonText'><h4> ${l.nombre}</h4></div></div>
+					</c:forEach>	
 					</div>
+					<button type='button' class='btn pmd-btn-fab btn-success btn-floating'><i class='fa fa-plus fa-lg'></i></button>
 
 				</div>
 			</div>

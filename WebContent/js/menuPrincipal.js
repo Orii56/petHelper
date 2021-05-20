@@ -1,5 +1,3 @@
-alert('fuck!');
-
 function select(option) {
 
 
@@ -10,6 +8,10 @@ function select(option) {
             x.innerHTML =
                 "<nav aria-label='breadcrumb'><ol class='breadcrumb'><li class='breadcrumb-item'>" + //breadcrumb
                 "<a href='#'>Home</a></li><li class='breadcrumb-item active' aria-current='page'>Mascotas</li></ol></nav>" + //breadcrumb
+
+
+
+
                 "<div class='subMenuButton row align-items-center'><img class='buttonIcon' src='img/dog.png'>" +
                 "<div class='buttonText'><h4>Maya</h4></div></div>" +
                 "<div class='subMenuButton row align-items-center'><img class='buttonIcon' src='img/cat.png'>" +

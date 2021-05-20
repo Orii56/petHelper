@@ -22,28 +22,13 @@
 
 				<!-- Columna izquierda -->
 				<div class="col-5">
-
-
-					<div class="menuButton selected row align-items-center">
-
-						<img class="buttonIcon" src="img/dog.png">
-						<div class="buttonText">
-							<h4>Maya</h4>
-						</div>
-
-
-					</div>
-
-					<div class="menuButton row align-items-center">
-
-						<img class="buttonIcon" src="img/cat.png">
-						<div class="buttonText">
-							<h4>Kira</h4>
-						</div>
-
-
-					</div>
-
+<div>
+					<c:forEach items="${requestScope.lista}" var="l" begin="0" end="4">
+					<div class='subMenuButton row align-items-center' id="${l.idMascota}" onclick="location.href='GestionMascota?option=detallesMascota&id=${l.idMascota}';">
+					<img class='buttonIcon' src='img/${l.tipoMascotaBean.tipo}.png'>
+					<div class='buttonText'><h4> ${l.nombre}</h4></div></div>
+					</c:forEach>	
+				</div>
 				</div>
 
 
@@ -59,15 +44,15 @@
 					</ol>
 				</nav>
 
-				<div class="subMenuButton row align-items-center">
+				<div class="subMenuButton row align-items-center" onclick="location.href='GestionMascota?option=vacuna';">
 
-					<div class="buttonText">
+					<div class="buttonText" href="menuVacuna.jsp">
 						<h4>Vacunas</h4>
 					</div>
 
 
 				</div>
-				<div class="subMenuButton row align-items-center">
+				<div class="subMenuButton row align-items-center" onclick="location.href='menuDesparasitacion.jsp';">
 
 					<div class="buttonText">
 						<h4>Desparasitacion</h4>
@@ -76,7 +61,7 @@
 
 					</div>
 
-<div class="subMenuButton row align-items-center">
+<div class="subMenuButton row align-items-center" onclick="location.href='menuHigiene.jsp';">
 
 						<div class="buttonText">
 							<h4>Higiene</h4>

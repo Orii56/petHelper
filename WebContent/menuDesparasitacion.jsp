@@ -24,7 +24,7 @@
 				<div class="col-5">
 
 
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center" onclick="location.href='menuVacuna.jsp';">
 
 						<div class="buttonText">
 							<h4>Vacunas</h4>
@@ -38,7 +38,7 @@
 						</div>
 					</div>
 
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center"  onclick="location.href='menuHigiene.jsp';">
 
 						<div class="buttonText">
 							<h4>Higiene</h4>
@@ -109,7 +109,7 @@
 
 
 
-					<button type="button"
+					<button type="button" onclick="location.href='addDesparasitacion.jsp'"
 						class="btn pmd-btn-fab btn-success btn-floating">
 						<i class="fa fa-plus fa-lg"></i>
 					</button>

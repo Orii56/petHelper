@@ -24,21 +24,21 @@
 				<div class="col-5">
 
 
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center" onclick="location.href='menuVacuna.jsp';">
 
 						<div class="buttonText">
 							<h4>Vacunas</h4>
 						</div>
 					</div>
 
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center" onclick="location.href='menuDesparasitacion.jsp';">
 
 						<div class="buttonText">
 							<h4>Desparasitacion</h4>
 						</div>
 					</div>
 
-					<div class="menuButton selected row align-items-center">
+					<div class="menuButton selected row align-items-center" onclick="location.href='menuHigiene.jsp';">
 
 						<div class="buttonText">
 							<h4>Higiene</h4>

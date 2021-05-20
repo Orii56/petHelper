@@ -69,15 +69,18 @@ public class Login extends HttpServlet {
 		case "logear":
 
 			if (udao.findByEmail(email) != null) {
-
+					
 				if (udao.findLogin(email, pwd) == null) {
 					// el mail existe en la bd pero no coincide con la pwd
 					request.setAttribute("estado", "combinación de usuario y contraseña incorrecta");
 					request.getRequestDispatcher("logear.jsp").forward(request, response);
 
 				} else {
+					// login ok
 					usu = udao.findLogin(email, pwd);
 					request.getSession().setAttribute("usuario", usu);
+					List<Mascota> lista = mdao.findByUsuario(usu.getIdUsuario());
+					request.setAttribute("lista", lista);
 					request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
 				}
 			} else {
@@ -89,7 +92,7 @@ public class Login extends HttpServlet {
 
 		case "registrar":
 
-
+			String pwdR= request.getParameter("passwordR");
 			String nombre = request.getParameter("name");
 
 			int cp = Integer.parseInt(request.getParameter("cp"));

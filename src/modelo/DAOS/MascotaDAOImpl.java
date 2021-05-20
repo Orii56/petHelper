@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import modelo.beans.Mascota;
+import modelo.beans.Usuario;
 
 public class MascotaDAOImpl implements MascotaDAO {
 
@@ -36,7 +37,7 @@ public class MascotaDAOImpl implements MascotaDAO {
 			query.setParameter("id_usuario", mascota.getUsuario().getIdUsuario());
 			query.setParameter("nombre", mascota.getNombre());
 			query.setParameter("fecha_nacimiento", mascota.getFechaNacimiento());
-			// query.setParameter("sexo", mascota.getSexo());
+			 query.setParameter("sexo", mascota.getSexo());
 			query.setParameter("raza", mascota.getRaza());
 			query.setParameter("tipo_mascota", mascota.getTipoMascotaBean().getIdTipo());
 			query.executeUpdate();
@@ -90,11 +91,16 @@ public class MascotaDAOImpl implements MascotaDAO {
 
 	@Override
 	public List<Mascota> findByUsuario(int id_usuario) {
-		sql = "select m from Mascota where m.id_usuario = :nid";
-
+		Usuario usu = new Usuario();
+		UsuarioDAOImpl udao = new UsuarioDAOImpl();
+		usu = udao.findById(id_usuario);
+		
+		sql = "select m from Mascota m where m.usuario = :nid";
+		System.out.println(usu);
+		System.out.println(sql);
 		try {
 			query = em.createQuery(sql);
-			query.setParameter("nid", id_usuario);
+			query.setParameter("nid", usu);
 			return query.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

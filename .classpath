@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/apache-tomcat-9.0.31/lib/mysql-connector-java-5.1.35-bin.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EclipseLink 2.5.2">
 		<attributes>
@@ -21,5 +19,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/apache-tomcat-9.0.31/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/orian/Desktop/Multimedia y dispositivos/hibernate-release-5.4.31.Final/lib/jpa-metamodel-generator/hibernate-jpamodelgen-5.4.31.Final.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

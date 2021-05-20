@@ -31,14 +31,14 @@
 						</div>
 					</div>
 
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center"  onclick="location.href='menuDesparasitacion.jsp';">
 
 						<div class="buttonText">
 							<h4>Desparasitacion</h4>
 						</div>
 					</div>
 
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center"  onclick="location.href='menuHigiene.jsp';">
 
 						<div class="buttonText">
 							<h4>Higiene</h4>
@@ -61,6 +61,22 @@
 							<li class="breadcrumb-item active" aria-current="page">Vacunas</li>
 						</ol>
 					</nav>
+					
+					<div>
+					<c:forEach items="${requestScope.listaV}" var="v" begin="0" end="20">
+					<div class="subMenuButton row align-items-center">
+
+						<div class="buttonText">
+							<h4>${v.fecha}</h4>
+							 <h4>-</h4>
+							 <h4>${v.tipo}</h4> 
+						</div>
+
+
+					</div>
+					</c:forEach>
+					
+					</div>
 
 					<!-- Deberia separar el breadcrumb -->
 					<div class="subMenuButton row align-items-center">
@@ -109,7 +125,7 @@
 
 
 
-					<button type="button"
+					<button type="button" onclick="location.href='addVacuna.jsp'"
 						class="btn pmd-btn-fab btn-success btn-floating">
 						<i class="fa fa-plus fa-lg"></i>
 					</button>

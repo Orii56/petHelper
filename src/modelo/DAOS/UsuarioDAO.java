@@ -14,6 +14,9 @@ public interface UsuarioDAO {
 	public Usuario findByEmail(String email);
 	
 	public Usuario findLogin(String email, String contrasena);
+	
+	public Usuario findById(int id_usuario);
+	
 
 	
 }

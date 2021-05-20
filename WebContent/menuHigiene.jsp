@@ -24,14 +24,14 @@
 				<div class="col-5">
 
 
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center" onclick="location.href='menuVacuna.jsp';">
 
 						<div class="buttonText">
 							<h4>Vacunas</h4>
 						</div>
 					</div>
 
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center"  onclick="location.href='menuDesparasitacion.jsp';">
 
 						<div class="buttonText">
 							<h4>Desparasitacion</h4>
@@ -55,7 +55,7 @@
 
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="menuPrincipal.jsp">Home</a></li>
 							<li class="breadcrumb-item" aria-current="page">Mascotas</li>
 							<li class="breadcrumb-item" aria-current="page">Maya</li>
 							<li class="breadcrumb-item active" aria-current="page">Higiene</li>
@@ -109,7 +109,7 @@
 
 
 
-					<button type="button"
+					<button type="button" onclick="location.href='addHigiene.jsp'"
 						class="btn pmd-btn-fab btn-success btn-floating">
 						<i class="fa fa-plus fa-lg"></i>
 					</button>

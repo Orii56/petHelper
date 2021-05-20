@@ -37,11 +37,15 @@ public class VacunaDAOImpl implements VacunaDAO{
 
 	@Override
 	public List<Vacuna> findByMascota(int id_mascota) {
-		sql = "select m from Vacuna where m.id_mascota = :nid";
+		Mascota m = new Mascota();
+		MascotaDAOImpl mdao = new MascotaDAOImpl();
+		m = mdao.findById(id_mascota);
+		
+		sql = "select v from Vacuna v where v.mascota = :nid";
 		
 		try {
 			query = em.createQuery(sql);
-			query.setParameter("nid", id_mascota);
+			query.setParameter("nid", m);
 			return query.getResultList();
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
