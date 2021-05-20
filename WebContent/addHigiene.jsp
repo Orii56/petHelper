@@ -65,22 +65,22 @@
 
 					<!-- Deberia separar el breadcrumb -->
 
-<form>
+<form action="GestionSanitaria?option=addHigiene" method="POST">
 			
 			<div class="form-group">
 					<label for="formName">Baño</label> <input
-						type="email" class="form-control" id="formName"
+						type="text" class="form-control" id="formName" name="name"
 						placeholder="Nombre shampoo, medicación, etc.">
 				</div>
 				<div class="form-group">
 					<label for="formDate">Fecha</label> <input
-						type="date" class="form-control" id="formDate"
+						type="date" class="form-control" id="formDate" name="date"
 						placeholder="Fecha">
 				</div>
 				
 				<div class="form-group">
 					<label for="formLastDate">Validez hasta</label> <input
-						type="date" class="form-control" id="formLastDate"
+						type="date" class="form-control" id="formLastDate" name="dateR"
 						placeholder="Fecha de Validez">
 				</div>
 				<button type="submit" class="btn btn-success btn-block">Submit</button>

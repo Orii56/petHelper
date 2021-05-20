@@ -63,49 +63,17 @@
 					</nav>
 
 					<!-- Deberia separar el breadcrumb -->
+
+					<c:forEach items="${requestScope.listaD}" var="d" begin="0" end="20">
 					<div class="subMenuButton row align-items-center">
 
 						<div class="buttonText">
-							<h4>15/04/2021 - Pipeta</h4>
+							<h4>"${d.fecha} + "-" + ${d.tipo}"</h4> 
 						</div>
 
 
 					</div>
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>15/03/2021 - Pipeta</h4>
-						</div>
-
-					</div>
-
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>16/02/2021 - Pipeta</h4>
-						</div>
-
-					</div>
-
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>03/01/2021 - Pipeta</h4>
-						</div>
-
-					</div>
-
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>25/05/2020 - Collar</h4>
-						</div>
-
-					</div>
+					</c:forEach>
 
 
 

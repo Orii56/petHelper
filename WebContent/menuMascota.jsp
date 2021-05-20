@@ -46,7 +46,7 @@
 
 				<div class="subMenuButton row align-items-center" onclick="location.href='GestionMascota?option=vacuna';">
 
-					<div class="buttonText" href="menuVacuna.jsp">
+					<div class="buttonText">
 						<h4>Vacunas</h4>
 					</div>
 

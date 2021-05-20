@@ -65,22 +65,22 @@
 
 					<!-- Deberia separar el breadcrumb -->
 
-<form>
+<form action="GestionSanitaria?option=addDesparasitacion" method="POST">
 			
 			<div class="form-group">
 					<label for="formName">Nombre Desparasitante</label> <input
-						type="email" class="form-control" id="formName"
+						type="text" class="form-control" id="name" name="name"
 						placeholder="Nombre Desparasitante">
 				</div>
 				<div class="form-group">
 					<label for="formDate">Fecha</label> <input
-						type="date" class="form-control" id="formDate"
+						type="date" class="form-control" id="date" name="date"
 						placeholder="Fecha Desparasitación">
 				</div>
 				
 				<div class="form-group">
 					<label for="formLastDate">Validez hasta</label> <input
-						type="date" class="form-control" id="formLastDate"
+						type="date" class="form-control" id="formLastDate" name="dateR"
 						placeholder="Fecha Vacuna">
 				</div>
 				<button type="submit" class="btn btn-success btn-block">Submit</button>

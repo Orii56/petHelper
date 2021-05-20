@@ -10,5 +10,11 @@ public interface HigieneDAO {
 	
 	public List<Higiene> findByMascota(int id_mascota);
 
+	public int insert(Higiene higiene);
+	
+	public int update(Higiene higiene);
+	
+	public void delete (Higiene higiene);
+	
 
 }

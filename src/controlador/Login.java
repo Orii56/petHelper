@@ -118,6 +118,18 @@ public class Login extends HttpServlet {
 			}
 			 
 			break;
+			
+		case "home":
+			request.getSession().setAttribute("usuario", usu);
+			List<Mascota> lista = mdao.findByUsuario(usu.getIdUsuario());
+			request.setAttribute("lista", lista);
+			
+			request.getSession().setAttribute("usuario", usu);
+			request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
+			
+			
+			break;
+			
 
 		}
 

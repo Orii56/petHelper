@@ -65,16 +65,16 @@
 
 					<!-- Deberia separar el breadcrumb -->
 
-<form>
+<form action="GestionSanitaria?option=addVacuna" method="POST">
 			
 			<div class="form-group">
 					<label for="formName">Nombre Vacuna</label> <input
-						type="email" class="form-control" id="formName"
+						type="text" class="form-control" id="name" name="name"
 						placeholder="Nombre Vacuna">
 				</div>
 				<div class="form-group">
 					<label for="formDate">Fecha</label> <input
-						type="date" class="form-control" id="formDate"
+						type="date" class="form-control" id="date" name="date"
 						placeholder="Fecha Vacuna">
 				</div>
 				<button type="submit" class="btn btn-success btn-block">Submit</button>
@@ -92,5 +92,6 @@
 
 
 </body>
+
 <script src="bootstrap/bootstrap.min.js"></script>
 </html>

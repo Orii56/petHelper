@@ -57,7 +57,7 @@
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="#">Home</a></li>
 							<li class="breadcrumb-item" aria-current="page">Mascotas</li>
-							<li class="breadcrumb-item" aria-current="page">Maya</li>
+							<li class="breadcrumb-item" aria-current="page">${requestScope.mascota.nombre}</li>
 							<li class="breadcrumb-item active" aria-current="page">Vacunas</li>
 						</ol>
 					</nav>
@@ -67,60 +67,13 @@
 					<div class="subMenuButton row align-items-center">
 
 						<div class="buttonText">
-							<h4>${v.fecha}</h4>
-							 <h4>-</h4>
-							 <h4>${v.tipo}</h4> 
+							<h4>"${v.fecha} + "-" + ${v.tipo}"</h4> 
 						</div>
 
 
 					</div>
 					</c:forEach>
 					
-					</div>
-
-					<!-- Deberia separar el breadcrumb -->
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>25/04/2021 - Heptavalente</h4>
-						</div>
-
-
-					</div>
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>25/02/2021 - Rabia</h4>
-						</div>
-
-					</div>
-
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>25/04/2020 - Heptavalente</h4>
-						</div>
-
-					</div>
-
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>25/04/2019 - Heptavalente</h4>
-						</div>
-
-					</div>
-
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>25/04/2018 - Heptavalente</h4>
-						</div>
-
 					</div>
 
 

@@ -10,6 +10,7 @@ import javax.persistence.Query;
 
 import modelo.beans.Desparasitacion;
 import modelo.beans.Mascota;
+import modelo.beans.Vacuna;
 
 public class DesparasitacionDAOImpl implements DesparasitacionDAO {
 	
@@ -46,6 +47,44 @@ sql = "select m from Desparasitacion where m.id_mascota = :nid";
 		return null;
 		
 	}
+
+
+	public int insert(Desparasitacion desparasitacion) {
+		Desparasitacion d = null;
+		
+		try {
+			d = em.find(Desparasitacion.class, desparasitacion.getIdDesparasitacion());
+			
+			if(d!=null) {
+				tx.begin();
+				em.merge(desparasitacion);
+				tx.commit();
+				return 1;
+			} else if (d == null) {
+				tx.begin();
+				em.persist(desparasitacion);
+				tx.commit();
+				
+				return 1;
+		}} catch(Exception e) {
+			System.out.println(e.getMessage());
+		} return 0;
+
 	
 
+	}
+
+
+	@Override
+	public int update(Desparasitacion desparasitacion) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int delete(Desparasitacion desparasitacion) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

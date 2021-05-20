@@ -52,5 +52,38 @@ public class VacunaDAOImpl implements VacunaDAO{
 		}
 		return null;
 	}
+	
+	public int insert(Vacuna vacuna) {
+		Vacuna v = null;
+		
+		try {
+			v = em.find(Vacuna.class, vacuna.getIdVacuna());
+			
+			if(v!=null) {
+				tx.begin();
+				em.merge(vacuna);
+				tx.commit();
+				return 1;
+			} else if (v == null) {
+				tx.begin();
+				em.persist(vacuna);
+				tx.commit();
+				
+				return 1;
+		}} catch(Exception e) {
+			System.out.println(e.getMessage());
+		} return 0;
+		
+	}
+	@Override
+	public int update(Vacuna vacuna) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public void delete(Vacuna vacuna) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

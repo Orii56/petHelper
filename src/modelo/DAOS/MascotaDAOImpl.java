@@ -29,25 +29,30 @@ public class MascotaDAOImpl implements MascotaDAO {
 
 	@Override
 	public int insert(Mascota mascota) {
-		sql = "INSERT INTO mascota VALUES (:id_mascota , :id_usuario , :nombre , :fecha_nacimiento , :sexo , :raza , :tipo_mascota)";
+
+		Mascota m = null;
 
 		try {
-			query = em.createQuery(sql);
-			query.setParameter("id_mascota", mascota.getIdMascota());
-			query.setParameter("id_usuario", mascota.getUsuario().getIdUsuario());
-			query.setParameter("nombre", mascota.getNombre());
-			query.setParameter("fecha_nacimiento", mascota.getFechaNacimiento());
-			 query.setParameter("sexo", mascota.getSexo());
-			query.setParameter("raza", mascota.getRaza());
-			query.setParameter("tipo_mascota", mascota.getTipoMascotaBean().getIdTipo());
-			query.executeUpdate();
+			m = em.find(Mascota.class, mascota.getIdMascota());
 
-			return 0;
+			if (m != null) {
+				tx.begin();
+				em.merge(mascota);
+				tx.commit();
+
+				return 1;
+			} else if (m == null) {
+				tx.begin();
+				em.persist(mascota);
+				tx.commit();
+
+				return 1;
+			}
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.getMessage();
 		}
 
-		return -1;
+		return 0;
 
 	}
 
@@ -94,7 +99,7 @@ public class MascotaDAOImpl implements MascotaDAO {
 		Usuario usu = new Usuario();
 		UsuarioDAOImpl udao = new UsuarioDAOImpl();
 		usu = udao.findById(id_usuario);
-		
+
 		sql = "select m from Mascota m where m.usuario = :nid";
 		System.out.println(usu);
 		System.out.println(sql);

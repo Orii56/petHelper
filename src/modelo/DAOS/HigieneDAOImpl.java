@@ -12,6 +12,7 @@ import javax.persistence.Query;
 import modelo.beans.Higiene;
 import modelo.beans.Mascota;
 
+
 public class HigieneDAOImpl implements HigieneDAO {
 	
 	private EntityManagerFactory emf;
@@ -46,6 +47,41 @@ public class HigieneDAOImpl implements HigieneDAO {
 			System.out.println(e.getMessage());
 		}
 		return null;
+	}
+
+	@Override
+	public int insert(Higiene higiene) {
+Higiene h = null;
+		
+		try {
+			h = em.find(Higiene.class, higiene.getIdHigiene());
+			
+			if(h!=null) {
+				tx.begin();
+				em.merge(higiene);
+				tx.commit();
+				return 1;
+			} else if (h == null) {
+				tx.begin();
+				em.persist(higiene);
+				tx.commit();
+				
+				return 1;
+		}} catch(Exception e) {
+			System.out.println(e.getMessage());
+		} return 0;
+	}
+
+	@Override
+	public int update(Higiene higiene) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void delete(Higiene higiene) {
+		// TODO Auto-generated method stub
+		
 	}
 	}
 	

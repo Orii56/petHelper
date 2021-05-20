@@ -63,50 +63,16 @@
 					</nav>
 
 					<!-- Deberia separar el breadcrumb -->
+					<c:forEach items="${requestScope.listaH}" var="h" begin="0" end="20">
 					<div class="subMenuButton row align-items-center">
 
 						<div class="buttonText">
-							<h4>15/04/2021 - Baño</h4>
+							<h4>"${h.fecha} + "-" + ${h.tipo}"</h4> 
 						</div>
 
 
 					</div>
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>15/03/2021 - Baño</h4>
-						</div>
-
-					</div>
-
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>16/02/2021 - Baño</h4>
-						</div>
-
-					</div>
-
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>03/01/2021 - Baño</h4>
-						</div>
-
-					</div>
-
-
-					<div class="subMenuButton row align-items-center">
-
-						<div class="buttonText">
-							<h4>25/11/2020 - Baño</h4>
-						</div>
-
-					</div>
-
+					</c:forEach>
 
 
 					<button type="button" onclick="location.href='addHigiene.jsp'"

@@ -72,7 +72,7 @@
 					<div class='buttonText'><h4> ${l.nombre}</h4></div></div>
 					</c:forEach>	
 					</div>
-					<button type='button' class='btn pmd-btn-fab btn-success btn-floating'><i class='fa fa-plus fa-lg'></i></button>
+					<button type='button' onclick="location.href='addMascota.jsp'" class='btn pmd-btn-fab btn-success btn-floating'><i class='fa fa-plus fa-lg'></i></button>
 
 				</div>
 			</div>

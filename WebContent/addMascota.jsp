@@ -25,9 +25,9 @@
 				<div class="col-5">
 
 
-					<div class="menuButton selected row align-items-center">
+					<div class="menuButton selected row align-items-center" onclick="location.href='menuPrincipal.jsp'">
 
-						<img class="buttonIcon" src="img/otros.png">
+						<img class="buttonIcon" src="img/Otros.png">
 						<div class="buttonText">
 							<h4>Mascotas</h4>
 						</div>
@@ -35,7 +35,7 @@
 
 					</div>
 
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center" onclick="location.href='menuPrincipal.jsp'">
 
 						<img class="buttonIcon" src="img/location.png">
 						<div class="buttonText">
@@ -44,7 +44,7 @@
 
 
 					</div>
-					<div class="menuButton row align-items-center">
+					<div class="menuButton row align-items-center"  onclick="location.href='menuPrincipal.jsp'">
 
 						<img class="buttonIcon" src="img/user.png">
 						<div class="buttonText">
@@ -65,7 +65,7 @@
 
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="Login?option=home">Home</a></li>
 							<li class="breadcrumb-item" aria-current="page">Mascotas</li>
 							<li class="breadcrumb-item active" aria-current="page">Nueva</li>
 						</ol>
@@ -73,55 +73,62 @@
 
 					<!-- Deberia separar el breadcrumb -->
 
+					<form action="GestionMascota?option=addMascota" method="POST">
 
 					<div class="col">
 						<div class="row">
-							<img class="animalIcon" src="img/bird.png">
-							<img class="animalIcon selectedAnimal" src="img/cat.png">
-							<img class="animalIcon" src="img/dog.png">
-							<img class="animalIcon" src="img/ferret.png">
+							<img class="animalIcon" id="a3" src="img/Pajaro.png" onclick="select(3)">
+							<img class="animalIcon" id="a2" src="img/Gato.png" onclick="select(2)">
+							<img class="animalIcon" id="a1" src="img/Perro.png" onclick="select(1)">
+							<img class="animalIcon" id="a6" src="img/Huron.png" onclick="select(6)">
 
 						</div>
 						<div class="row">
-							<img class="animalIcon" src="img/guineapig.png">
-							<img class="animalIcon" src="img/otros.png">
-							<img class="animalIcon" src="img/rabbit.png">
-							<img class="animalIcon" src="img/snake.png">
+							<img class="animalIcon" id="a4" src="img/Roedor.png" onclick="select(4)">
+							<img class="animalIcon" id="a7" src="img/Otros.png" onclick="select(7)">
+							<img class="animalIcon" id="a8" src="img/Conejo.png" onclick="select(8)">
+							<img class="animalIcon" id="a5" src="img/Reptil.png" onclick="select(5)">
 						</div>
 					</div>
+					<input type="hidden" name="jspVar" id="hiddenValue" value="7">
 
 
 
 
-					<form>
 
 						<div class="form-group">
-							<label for="formName">Nombre</label> <input type="email"
+							<label for="formName">Nombre</label> <input type="text" name="name"
 								class="form-control" id="formName" placeholder="Nombre">
 						</div>
 						<div class="form-group">
 							<label for="formName">Sexo</label>
 							<div class="form-check">
 								<input class="form-check-input" type="radio"
-									name="flexRadioDefault" id="flexRadioDefault1"> <label
+									name="sexo" id="flexRadioDefault1"> <label
 									class="form-check-label" for="flexRadioDefault1">
 									Hembra </label>
 							</div>
 							<div class="form-check">
 								<input class="form-check-input" type="radio"
-									name="flexRadioDefault" id="flexRadioDefault2" checked>
+									name="sexo" id="flexRadioDefault2" checked>
 								<label class="form-check-label" for="flexRadioDefault2">
 									Macho </label>
 							</div>
+							
+							<div class="form-group">
+					<label for="formDate">Fecha de Nacimiento</label> <input
+						type="date" class="form-control" id="date" name="date"
+						placeholder="Fecha de Nacimiento">
+				</div>
 
 							<div class="form-group">
-								<label for="formRaza">Raza</label> <input type="email"
+								<label for="formRaza">Raza</label> <input type="text" name="raza"
 									class="form-control" id="formRaza" placeholder="Raza">
 							</div>
 
 
 							<div class="form-group">
-								<label for="formChip">Número de Chip</label> <input type="email"
+								<label for="formChip">Número de Chip</label> <input type="text" name="chip"
 									class="form-control" id="formChip" placeholder="Numero de Chip">
 							</div>
 
@@ -141,5 +148,6 @@
 
 
 </body>
+<script src="js/menuMascota.js"></script>
 <script src="bootstrap/bootstrap.min.js"></script>
 </html>

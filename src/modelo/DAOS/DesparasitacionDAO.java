@@ -10,6 +10,11 @@ public interface DesparasitacionDAO {
 	
 	public List<Desparasitacion> findByMascota(int id_mascota);
 
+	public int insert(Desparasitacion desparasitacion); 
+	
+	public int update(Desparasitacion desparasitacion);
 
+	public int delete(Desparasitacion desparasitacion);
+	
 	
 }

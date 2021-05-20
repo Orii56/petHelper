@@ -12,5 +12,12 @@ public interface VacunaDAO {
 	
 
 	public List<Vacuna> findByMascota(int id_mascota);
+
+	public int insert(Vacuna vacuna);
+	
+	public int update(Vacuna vacuna);
+	
+	public void delete(Vacuna vacuna);
+
 }
 
