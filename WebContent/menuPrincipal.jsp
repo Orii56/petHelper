@@ -64,7 +64,7 @@
 				<!-- Columna derecha -->
 				<div class="col-7" id="rCol">
 				<nav aria-label='breadcrumb'><ol class='breadcrumb'><li class='breadcrumb-item'>
-<a href='#'>Home</a></li><li class='breadcrumb-item active' aria-current='page'>Mascotas</li></ol></nav>
+<a href="Login?option=home">Home</a></li><li class='breadcrumb-item active' aria-current='page'>Mascotas</li></ol></nav>
 					<div>
 					<c:forEach items="${requestScope.lista}" var="l" begin="0" end="4">
 					<div class='subMenuButton row align-items-center' onclick="location.href='GestionMascota?option=mostrarMascotas';">

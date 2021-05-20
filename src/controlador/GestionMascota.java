@@ -75,19 +75,6 @@ public class GestionMascota extends HttpServlet {
 			
 			break;
 		
-		case "crearMascotas":
-			request.getSession().setAttribute("usuario", usu);
-
-			
-			
-			
-			break;
-		
-		
-		
-		
-		
-		
 		
 		
 		case "detallesMascota":
@@ -97,16 +84,22 @@ public class GestionMascota extends HttpServlet {
 			String id = request.getParameter("id");
 			m = mdao.findById(Integer.parseInt(id));
 			request.getSession().setAttribute("idMascota", id);
-			request.getSession().setAttribute("detalles", m);
+			String nombreBread = m.getNombre();
+			request.getSession().setAttribute("detalles", nombreBread);
 			request.getRequestDispatcher("menuMascota.jsp").forward(request, response);
 			
 			break;
 			
 		case "vacuna":
+			request.getSession().setAttribute("detalles", m);
 			id = (String) request.getSession().getAttribute("idMascota");
 			request.getSession().setAttribute("usuario", usu);
 
 			request.setAttribute("idMascota", id);
+			m = mdao.findById(Integer.parseInt(id));
+			request.getSession().setAttribute("idMascota", id);
+			nombreBread = m.getNombre();
+			request.getSession().setAttribute("detalles", nombreBread);
 			VacunaDAOImpl vdao = new VacunaDAOImpl();
 			List<Vacuna> v = vdao.findByMascota((Integer.parseInt(id)));
 			request.setAttribute("listaV", v);
@@ -117,10 +110,16 @@ public class GestionMascota extends HttpServlet {
 		break;
 
 		case "desparasitacion":
+			request.getSession().setAttribute("detalles", m);
 			id = (String) request.getSession().getAttribute("idMascota");
 			request.getSession().setAttribute("usuario", usu);
 
 			request.setAttribute("idMascota", id);
+			m = mdao.findById(Integer.parseInt(id));
+			request.getSession().setAttribute("idMascota", id);
+			nombreBread = m.getNombre();
+			request.getSession().setAttribute("detalles", nombreBread);
+
 			
 			DesparasitacionDAOImpl ddao = new DesparasitacionDAOImpl();
 			
@@ -135,10 +134,16 @@ public class GestionMascota extends HttpServlet {
 		
 		
 		case "higiene":
+			request.getSession().setAttribute("detalles", m);
 			id = (String) request.getSession().getAttribute("idMascota");
 			request.getSession().setAttribute("usuario", usu);
 
 			request.setAttribute("idMascota", id);
+			m = mdao.findById(Integer.parseInt(id));
+			request.getSession().setAttribute("idMascota", id);
+			nombreBread = m.getNombre();
+			request.getSession().setAttribute("detalles", nombreBread);
+
 			
 			HigieneDAOImpl hdao = new HigieneDAOImpl();
 			

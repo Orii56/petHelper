@@ -55,7 +55,7 @@
 
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="menuPrincipal.jsp">Home</a></li>
+							<li class="breadcrumb-item"><a href="Login?option=home">Home</a></li>
 							<li class="breadcrumb-item" aria-current="page">Mascotas</li>
 							<li class="breadcrumb-item" aria-current="page">Maya</li>
 							<li class="breadcrumb-item active" aria-current="page">Higiene</li>
